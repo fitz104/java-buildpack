@@ -32,7 +32,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @application.services.find_service(FILTER)['credentials']
+        credentials = @application.services.find_service(FILTER)['credentials']
         
         @droplet.java_opts
         .add_javaagent(@droplet.sandbox + 'Agent.jar')
