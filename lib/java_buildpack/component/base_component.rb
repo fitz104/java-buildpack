@@ -118,7 +118,7 @@ module JavaBuildpack
         download(version, uri, name) do |file|
           with_timing "Expanding #{name} to #{target_directory.relative_path_from(@droplet.root)}" do
             FileUtils.mkdir_p target_directory
-            shell "tar xzf #{file.path} -C #{target_directory} --strip 1 2>&1"
+            shell "tar xzf #{file.path} -C #{target_directory} --strip 1"
           end
         end
       end
